@@ -4,8 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
+        <!-- hint 一般表示可输入框中的提示语-->
         <TextView
             android:id="@+id/tvResult"
             android:layout_width="fill_parent"
@@ -15,7 +17,8 @@
             android:text="@string/tvResult"
             />
     </LinearLayout>
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btnBackspace"
@@ -31,7 +34,8 @@
             android:width="150dp"
             android:text="@string/btnCE"/>
     </LinearLayout>
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btn7"
@@ -59,7 +63,8 @@
             android:width="75dp"
             android:text="@string/btnDiv"/>
     </LinearLayout>
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btn4"
@@ -87,7 +92,8 @@
             android:width="75dp"
             android:text="@string/btnMul"/>
     </LinearLayout>
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btn1"
@@ -115,7 +121,8 @@
             android:width="75dp"
             android:text="@string/btnAdd"/>
     </LinearLayout>
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btn0"
