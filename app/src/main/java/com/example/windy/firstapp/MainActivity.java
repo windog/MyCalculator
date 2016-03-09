@@ -1,10 +1,14 @@
 package com.example.windy.firstapp;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnDiv = null;
     Button btnEqu = null;
     TextView tvResult = null;
+
+    //测试动画效果的控件
+    ImageView imageView = null;
+    Button btnAnimator = null;
+    static int x = 0 , xx = 0 , y = 0 , yy = 0;
+
 
     //声明两个参数。接收tvResult前后的值
     double num1 = 0;
@@ -65,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDiv = (Button) findViewById(R.id.btnDiv);
         tvResult = (TextView) findViewById(R.id.tvResult);
 
+        //找到动画效果的两个控件
+        imageView = (ImageView) findViewById(R.id.imageView);
+        btnAnimator = (Button) findViewById(R.id.button);
+
         //给按钮分别添加监听
         btnBackspace.setOnClickListener(this);
         btnCE.setOnClickListener(this);
@@ -86,6 +100,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMul.setOnClickListener(this);
         btnDiv.setOnClickListener(this);
         btnEqu.setOnClickListener(this);
+    }
+
+    public void imgClick(View view){
+        Toast.makeText(this, "ImageView", Toast.LENGTH_SHORT).show();
+    }
+
+    public void buttonClick(View view){
+
+//         xx += 20;
+//         TranslateAnimation ta = new TranslateAnimation(x, xx, y, yy);//设置动画的偏移位移
+//         x += 20;
+//        ta.setDuration(1000);//设置动画的时长
+//        ta.setFillAfter(true);//设置动画结束后停留在该位置
+//        imageView.startAnimation(ta);
+
+        //属性动画调用start()方法后是一个异步操作
+//        ObjectAnimator.ofFloat(imageView, "translationX", 0F, 360F).setDuration(1000).start();//X轴平移旋转
+//        ObjectAnimator.ofFloat(imageView, "translationY", 0F, 360F).setDuration(1000).start();//Y轴平移旋转
+//        ObjectAnimator.ofFloat(imageView, "rotation", 0F, 360F).setDuration(1000).start();//360度旋转
+
+        //同步动画设计
+//        PropertyValuesHolder p1 = PropertyValuesHolder.ofFloat("translationX", 0, 360F);
+//        PropertyValuesHolder p2 = PropertyValuesHolder.ofFloat("translationY", 0, 360F);
+//        PropertyValuesHolder p3 = PropertyValuesHolder.ofFloat("rotation", 0, 360F);
+//        ObjectAnimator.ofPropertyValuesHolder(imageView, p1, p2 ,p3).setDuration(1000).start();
+
+        //通过AnimatiorSet来设计同步执行的多个属性动画
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(imageView, "translationX", 0F, 360F);//X轴平移旋转
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(imageView, "translationY", 0F, 360F);//Y轴平移旋转
+        ObjectAnimator animator3 = ObjectAnimator.ofFloat(imageView, "rotation", 0F, 360F);//360度旋转
+        AnimatorSet set = new AnimatorSet();
+        //set.playSequentially(animator1, animator2, animator3);//分步执行
+        //set.playTogether(animator1, animator2, animator3);//同步执行
+
+        //属性动画的执行顺序控制
+        //先同步执行动画animator2和animator3,然后再执行animator1
+        //set.play(animator2).with(animator3);
+        //set.play(animator2).after(animator1);
+        set.play(animator3).after(animator2);
+        set.play(animator2).after(animator1);
+
+
+        set.setDuration(1000);
+        set.start();
+
     }
 
     @Override
