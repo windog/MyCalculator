@@ -40,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnAnimator = null;
     static int x = 0 , xx = 0 , y = 0 , yy = 0;
 
+    //两个跳转Activity的按钮
+    Button btn2acti2 = null;
+    Button btn2acti3 = null;
+
 
     //声明两个参数。接收tvResult前后的值
     double num1 = 0;
@@ -78,6 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //找到动画效果的两个控件
         imageView = (ImageView) findViewById(R.id.imageView);
         btnAnimator = (Button) findViewById(R.id.button);
+
+        //找到两个跳转按钮
+        btn2acti2 = (Button) findViewById(R.id.btn_to_acti2);
+        btn2acti3 = (Button) findViewById(R.id.btn_to_acti3);
 
         //给按钮分别添加监听
         btnBackspace.setOnClickListener(this);
@@ -326,6 +334,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 tvResult.setText(String.valueOf(Result));
                 isClickEqu = true;
+                break;
+
+            case R.id.btn_to_acti2:
                 break;
 
             default:

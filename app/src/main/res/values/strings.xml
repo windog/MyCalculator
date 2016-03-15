@@ -21,4 +21,6 @@
     <string name="btnMul">*</string>
     <string name="btnDiv">/</string>
     <string name="tvResult">0</string>
+    <string name="title_activity_2">跟随手指的图片</string>
+    <string name="title_activity_3">Activity3</string>
 </resources>
