@@ -2,6 +2,7 @@ package com.example.windy.firstapp;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this, "ImageView", Toast.LENGTH_SHORT).show();
     }
 
+    //动态图片按钮
     public void buttonClick(View view){
 
 //         xx += 20;
@@ -154,6 +156,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         set.start();
 
     }
+
+    //跳转到Activity2,随手指移动的图片
+    public void buttonClick1(View view){
+        Intent intent22 = new Intent();
+        intent22.setClass(MainActivity.this,Activity2.class);
+        startActivity(intent22);
+    }
+
+    //跳转到Activity3
+    public void buttonClick2(View view){
+        Intent intent23 = new Intent();
+        intent23.setClass(MainActivity.this,Activity3.class);
+        startActivity(intent23);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -336,8 +353,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 isClickEqu = true;
                 break;
 
+            /*这两个按钮，这样写，不起作用，得在xml里绑定才管用，不知道为什么
+            //跳转到Activity2的按钮
             case R.id.btn_to_acti2:
+                Intent intent22 = new Intent();
+                intent22.setClass(MainActivity.this,Activity2.class);
+                startActivity(intent22);
                 break;
+
+            //跳转到Activity3的按钮
+            case R.id.btn_to_acti3:
+                Intent intent23 = new Intent();
+                intent23.setClass(MainActivity.this,Activity3.class);
+                startActivity(intent23);
+                break;
+            */
 
             default:
                 break;
