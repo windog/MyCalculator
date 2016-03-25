@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.windy.firstapp">
-
+    <!--application中的label是应用名称-->
+    <!--Activity中的label是展示给用户看的名称-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.windy.firstapp.MainActivity"
+            android:name="com.example.windy.firstapp.app.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -18,13 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.windy.firstapp.Activity2"
+            android:name="com.example.windy.firstapp.app.Activity2"
             android:label="@string/title_activity_2"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name="com.example.windy.firstapp.Activity3"
+            android:name="com.example.windy.firstapp.app.Activity3"
             android:label="@string/title_activity_3"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

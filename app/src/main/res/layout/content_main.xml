@@ -6,7 +6,7 @@
     android:orientation="horizontal"
     android:rowCount="7"
     android:columnCount="4">
-
+    <!-- textview中 hint表示 默认提示文本-->
     <!--Line one 显示框-->
     <TextView
         android:id="@+id/tvResult"
@@ -15,9 +15,9 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="#FFCCCC"
-        android:text="0"
+        android:hint="0"
         android:textSize="50sp"/>
-
+    
     <!--Line two -->
     <Button
         android:id="@+id/btnBackspace"
@@ -120,6 +120,13 @@
             android:id="@+id/btn_to_acti3"
             android:onClick="buttonClick2"
             android:text="to_acti3"/>
+
+        <com.example.windy.firstapp.myview.MyButton
+            android:id="@+id/mybutton"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:text="自定义Button"/>
+
 
 </GridLayout>
 
